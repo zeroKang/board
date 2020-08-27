@@ -3,9 +3,14 @@ package org.zerock.board.repository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.zerock.board.entity.Board;
 import org.zerock.board.entity.Reply;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
@@ -46,4 +51,34 @@ public class ReplyRepositoryTests {
         System.out.println(reply);
 
     }
+
+    @Test
+    public void testList() {
+
+        List<Reply> result = replyRepository.getList(100L);
+
+        result.forEach(reply -> {
+            System.out.println(reply);
+        });
+
+        System.out.println("---------------------------------------");
+        System.out.println(result);
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

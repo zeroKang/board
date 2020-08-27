@@ -1,7 +1,14 @@
 package org.zerock.board.dto;
 
+import lombok.*;
+
 import java.time.LocalDateTime;
 
+@Data
+@ToString
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class BoardDTO {
 
     private Long bno;
@@ -14,7 +21,11 @@ public class BoardDTO {
 
     private String writerName;
 
-    private LocalDateTime regdate;
+    private LocalDateTime regDate;
+
+    private LocalDateTime modDate;
+
+    private int replyCount;
 
 
 }
